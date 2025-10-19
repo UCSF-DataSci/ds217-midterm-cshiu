@@ -289,7 +289,9 @@ if __name__ == "__main__":
     # print("Test detect_missing:", detect_missing(test_df))
 
 print("Run test on q3_data cleanup...")
-test_df = pd.DataFrame({'age':[25, 31, 42, 88, None], 'site': ['A', 'B', 'A', 'C', 'B']})
-print()"f"Test DataFrame created: {test_df.shape}")
+test_df = pd.DataFrame(
+    {"age": [25, 31, 42, 88, None], "site": ["A", "B", "A", "C", "B"]}
+)
+print(f"Test DataFrame created: {test_df.shape}")
 print(f"Test detect_missing: {detect_missing(test_df).sum()}")
 print("Test passed!")

@@ -1,0 +1,16 @@
+data:
+total 1872
+drwxr-xr-x@  3 eekod  staff      96 Oct 19 11:34 .
+drwx------@ 24 eekod  staff     768 Oct 19 12:01 ..
+-rw-r--r--@  1 eekod  staff  958389 Oct 19 11:32 clinical_trial_raw.csv
+
+output:
+total 0
+drwxr-xr-x@  2 eekod  staff   64 Oct 19 11:34 .
+drwx------@ 24 eekod  staff  768 Oct 19 12:01 ..
+
+reports:
+total 0
+drwxr-xr-x@  3 eekod  staff   96 Oct 19 12:01 .
+drwx------@ 24 eekod  staff  768 Oct 19 12:01 ..
+-rw-r--r--@  1 eekod  staff    0 Oct 19 12:01 directory_structure.txt

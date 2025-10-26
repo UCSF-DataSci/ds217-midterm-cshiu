@@ -26,15 +26,14 @@ def load_data(filepath: str) -> pd.DataFrame:
         >>> df.shape
         (10000, 18)
     """
+    df = pd.read_csv(filepath)
+    return df
 
-    def load_data(filepath: str) -> pd.DataFrame:
-        df = pd.read_csv(filepath)
-        return df
 
-    df = load_data("output/q4_site_counts.csv")
+if __name__ == "__main__":
+    df = load_data("data/clinical_trial_raw.csv")
     print(df.head())
     print(df.shape)
-    return df
 
 
 def clean_data(

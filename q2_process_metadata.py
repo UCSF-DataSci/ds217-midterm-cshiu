@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import random
+
 # TODO: Add shebang line: #!/usr/bin/env python3
 # Assignment 5, Question 2: Python Data Processing
 # Process configuration files for data generation.
@@ -59,32 +61,50 @@ def validate_config(config: dict) -> dict:
     if "sample_data_rows" in config:
         try:
             rows = int(config["sample_data_rows"])
-            results["sample_data_rows"] = rows > 0
+            if rows > 0:
+                results["sample_data_rows"] = True
+            else:
+                results["sample_data_rows"] = False
         except ValueError:
             results["sample_data_rows"] = False
         else:
             results["sample_data_rows"] = False
-            # Validate sample_data_min int and >= 1
+
+    # Validate sample_data_min
+    if "sample_data_min" in config:
+        try:
+            min_val = int(config["sample_data_min"])
+            if min_val >= 1:
+                results["sample_data_min"] = True
+            else:
+                results["sample_data_min"] = False
+        except ValueError:
+            results["sample_data_min"] = False
+        else:
+            results["sample_data_min"] = False
+
+    # Validate sample_data_max
+    if "sample_data_max" in config:
+        try:
+            max_val = int(config["sample_data_max"])
             if "sample_data_min" in config:
                 try:
                     min_val = int(config["sample_data_min"])
-                    results["sample_data_min"] = min_val >= 1
+                    if max_val > min_val:
+                        results["sample_data_max"] = True
+                    else:
+                        results["sample_data_max"] = False
                 except ValueError:
-                    results["sample_data_min"] = False
-                    # validate sample_data_max int and > sample_data_min
-                    if "sample_data_max" in config:
-                        try:
-                            max_val = int(config["sample_data_max"])
-                            min_val = int(config.get("sample_data_min", 0))
-                            results["sample_data_max"] = max_val > min_val
-                        except ValueError:
-                            results["sample_data_max"] = False
-                        else:
-                            results["sample_data_max"] = False
+                    results["sample_data_max"] = False
+            else:
+                # If min doesn't exist, can't validate max properly
+                results["sample_data_max"] = False
+        except ValueError:
+            results["sample_data_max"] = False
+    else:
+        results["sample_data_max"] = False
+
     return results
-
-
-import random
 
 
 def generate_sample_data(filename: str, config: dict) -> None:
@@ -118,13 +138,14 @@ def generate_sample_data(filename: str, config: dict) -> None:
             random_num = random.randint(min_val, max_val)
             file.write(f"{random_num}\n")
 
-    # TODO: Use random module with config-specified range
-    config = {
-        "sample_data_rows": "100",
-        "sample_data_min": "18",
-        "sample_data_max": "75",
-    }
-    generate_sample_data("output/sample_data.csv", config)
+
+# TODO: Use random module with config-specified range
+config = {
+    "sample_data_rows": "100",
+    "sample_data_min": "18",
+    "sample_data_max": "75",
+}
+generate_sample_data("output/sample_data.csv", config)
 
 
 def calculate_statistics(data: list) -> dict:
@@ -154,11 +175,11 @@ def calculate_statistics(data: list) -> dict:
     if count == 0:
         median = 0
     elif count % 2 == 1:  # odd number of elements
-        median = sorted_data[count / 2]
+        median = sorted_data[count // 2]
     else:  # even number of elements
-        mid1 = sorted_data[count / 2 - 1]
-        mid2 = sorted_data[count / 2]
-        median = (mid1 + mid2) / 2
+        mid1 = sorted_data[count // 2 - 1]
+        mid2 = sorted_data[count // 2]
+        median = (mid1 + mid2) // 2
 
     return {"mean": mean, "median": median, "sum": total, "count": count}
 
@@ -166,7 +187,6 @@ def calculate_statistics(data: list) -> dict:
 # Example usage
 stats = calculate_statistics([10, 20, 30, 40, 50])
 print(stats)
-
 if __name__ == "__main__":
     # TODO: Test your functions with sample data
     # Example:

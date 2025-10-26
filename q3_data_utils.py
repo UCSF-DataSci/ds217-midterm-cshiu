@@ -151,7 +151,7 @@ def filter_data(df: pd.DataFrame, filters: list) -> pd.DataFrame:
         value = filter_cat["value"]
 
         if condition == "equals":
-            df_filtered = df_filtered[df_filtered[col] == value]
+            df_filtered = df_filtered[df_filtered[column] == value]
         elif condition == "greater_than":
             df_filtered = df_filtered[df_filtered[column] > value]
         elif condition == "less_than":

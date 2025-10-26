@@ -1,16 +1,17 @@
 data:
 total 1872
 drwxr-xr-x@  3 eekod  staff      96 Oct 19 11:34 .
-drwx------@ 24 eekod  staff     768 Oct 19 12:01 ..
--rw-r--r--@  1 eekod  staff  958389 Oct 19 11:32 clinical_trial_raw.csv
+drwx------@ 28 eekod  staff     896 Oct 25 20:44 ..
+-rw-r--r--@  1 eekod  staff  958389 Oct 20 10:53 clinical_trial_raw.csv
 
 output:
-total 0
-drwxr-xr-x@  2 eekod  staff   64 Oct 19 11:34 .
-drwx------@ 24 eekod  staff  768 Oct 19 12:01 ..
+total 8
+drwxr-xr-x@  3 eekod  staff   96 Oct 19 21:53 .
+drwx------@ 28 eekod  staff  896 Oct 25 20:44 ..
+-rw-r--r--@  1 eekod  staff  438 Oct 19 21:53 q4_site_counts.csv
 
 reports:
 total 0
-drwxr-xr-x@  3 eekod  staff   96 Oct 19 12:01 .
-drwx------@ 24 eekod  staff  768 Oct 19 12:01 ..
--rw-r--r--@  1 eekod  staff    0 Oct 19 12:01 directory_structure.txt
+drwxr-xr-x@  3 eekod  staff   96 Oct 25 20:44 .
+drwx------@ 28 eekod  staff  896 Oct 25 20:44 ..
+-rw-r--r--@  1 eekod  staff    0 Oct 25 20:47 directory_structure.txt

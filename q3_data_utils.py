@@ -26,7 +26,14 @@ def load_data(filepath: str) -> pd.DataFrame:
         >>> df.shape
         (10000, 18)
     """
-    df = pd.read_csv(filepath)
+
+    def load_data(filepath: str) -> pd.DataFrame:
+        df = pd.read_csv(filepath)
+        return df
+
+    df = load_data("output/q4_site_counts.csv")
+    print(df.head())
+    print(df.shape)
     return df
 
 
@@ -185,8 +192,9 @@ def transform_types(df: pd.DataFrame, type_map: dict) -> pd.DataFrame:
     """
     df_typed = df.copy()
     for column, target_type in type_map.items():
-        print(f"Warning: Column '{column}' not found in DataFrame.")
-        continue
+        if column not in df_typed.columns:
+            print(f"Warning: Column '{column}' not found in DataFrame.")
+            continue
         if target_type == "datetime":
             df_typed[column] = pd.to_datetime(df_typed[column], errors="coerce")
         elif target_type == "numeric":
@@ -230,7 +238,9 @@ def create_bins(
     # Set default new column name for binned data
     if new_column is None:
         new_column = f"{column}_binned"
-    df_binned[new_column] = pd.cut(df_binned[column], bins=bins, labels=labels)
+    df_binned[new_column] = pd.cut(
+        df_binned[column], bins=bins, labels=labels, include_lowest=True
+    )
     return df_binned
 
 
@@ -290,7 +300,11 @@ if __name__ == "__main__":
 
 print("Run test on q3_data cleanup...")
 test_df = pd.DataFrame(
-    {"age": [25, 31, 42, 88, None], "site": ["A", "B", "A", "C", "B"]}
+    {
+        "age": [25, 31, 42, 88, None],
+        "bmi": [21, 25, 27, None, 29],
+        "site": ["A", "B", "A", "C", "B"],
+    }
 )
 print(f"Test DataFrame created: {test_df.shape}")
 print(f"Test detect_missing: {detect_missing(test_df).sum()}")

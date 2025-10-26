@@ -15,4 +15,37 @@ echo "Starting clinical trial data pipeline..." > reports/pipeline_log.txt
 # Use either `$?` or `||` operator to check exit codes and stop on failure
 # Add a log entry for each notebook execution or failure
 # jupyter nbconvert --execute --to notebook q4_exploration.ipynb
+
+LOG_FILE = "reports/notebook_execution_log"
+
+echo"================================" > $LOG_FILE
+echo "Notebook Execution Log" >> $LOG_FILE
+echo "Notebook execution started: $(date)" > $LOG_FILE
+echo "" >> $LOG_FILE
+
+run_notebook() {
+    NOTEBOOK=$1
+    echo "Executing $NOTEBOOK..." | tee -a $LOG_FILE
+    jupyter nbconvert --execute --to notebook --inplace $NOTEBOOK
+    if [$? -eq 0]; then
+    echo "$NOTEBOOK executed successfully." | tee -a $LOG_FILE
+    echo "" >> $LOG_FILE
+    return 0
+    else
+    echo "$NOTEBOOK execution failed" | tee -a $LOG_FILE
+    echo "Execution stopped due to error." | tee -a $LOG_FILE
+    echo "" >> $LOG_FILE
+    return 1
+}
+
+run_notebook "q4_exploration.ipynb" || exit 1
+run_notebook "q5_data_cleaning.ipynb" || exit 1
+run_notebook "q6_data_typing.ipynb" || exit 1
+run_notebook "q7_aggregation.ipynb" || exit 1
+
+echo "===============================" | tee -a $LOG_FILE
+echo "All notebooks executed successfully: $(date)" | tee -a $LOG_FILE
+echo "===============================" | tee -a $LOG_FILE
+
 echo "Pipeline complete!" >> reports/pipeline_log.txt
+

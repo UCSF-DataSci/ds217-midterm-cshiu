@@ -161,6 +161,8 @@ def filter_data(df: pd.DataFrame, filters: list) -> pd.DataFrame:
             df_filtered = df_filtered[
                 (df_filtered[column] >= value[0]) & (df_filtered[column] <= value[1])
             ]
+        elif condition == "isin":
+            df_filtered = df_filtered[df_filtered[column].isin(value)]
         elif condition == "in_list":
             df_filtered = df_filtered[df_filtered[column].isin(value)]
         else:

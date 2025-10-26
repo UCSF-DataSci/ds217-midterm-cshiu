@@ -199,14 +199,14 @@ if __name__ == "__main__":
     validation = validate_config(config)
     if all(validation.values()):
         print("Configuration is valid! Generating sample data...")
-        # generate_sample_data('data/sample_data.csv', config)
-        generate_sample_data("data/sample_data.csv", config)
-        print("Sample data generated in data/sample_data.csv")
+        # generate_sample_data('output/sample_data.csv', config)
+        generate_sample_data("output/sample_data.csv", config)
+        print("Sample data generated in output/sample_data.csv")
         print()
 
     # TODO: Read the generated file and calculate statistics
     data = []
-    with open("data/sample_data.csv", "r") as file:
+    with open("output/sample_data.csv", "r") as file:
         for line in file:
             data.append(int(line.strip()))
     print(f"Read {len(data)} numbers from sample_data.csv")

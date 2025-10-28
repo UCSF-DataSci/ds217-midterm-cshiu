@@ -1,0 +1,8 @@
+Missing data cleaning report
+Strategy: Drop rows with any missing data
+Original dataset: 10000 rows
+Cleaned dataset: 7133 rows
+Rows dropped: 2867 (28.67%)
+
+Remaining missing values: 0
+No missing values

@@ -8,18 +8,14 @@ site
 site a  56.36  25.88       117.35         73.55
 site b  62.40  25.71       117.13         73.31
 site c  57.31  25.79       117.98         73.68
-site d  60.72  25.68       118.05         73.73
+site d  63.49  25.57       117.94         73.64
 site e  57.06  25.48       117.50         73.75
-sited   72.18  25.20       117.60         73.35
 
 2. Intervention Counts
 intervention_group
 treatment b    3342
-control        2462
-treatment a    1968
-contrl          875
-treatmenta      701
-treatmen a      652
+control        3337
+treatment a    3321
 
 3. Age, BMI, systolic BP by Site
           age                      bmi       systolic_bp       
@@ -28,46 +24,33 @@ site
 site a  56.36  162.54 -999  100  25.88  4.98      117.35  117.0
 site b  62.40  139.05 -999  100  25.71  5.02      117.13  117.0
 site c  57.31  157.94 -999  100  25.79  5.42      117.98  118.0
-site d  60.72  145.97 -999  100  25.68  5.91      118.05  118.0
+site d  63.49  136.14 -999  100  25.57  5.88      117.94  118.0
 site e  57.06  157.70 -999  100  25.48  6.08      117.50  117.0
-sited   72.18   98.87 -999  100  25.20  5.77      117.60  117.0
 
 4. Cardiovascular disease by group
 intervention_group
-contrl        NaN
-control       NaN
-treatmen a    NaN
-treatment a   NaN
-treatment b   NaN
-treatmenta    NaN
+control        0.34
+treatment a    0.32
+treatment b    0.33
 
 5. Adherence by group
 intervention_group
-contrl         59.96
-control        60.86
-treatmen a     59.85
-treatment a    60.68
+control        60.62
+treatment a    60.21
 treatment b    61.01
-treatmenta     59.23
 
 6. Intervention group vs. dropout status
-dropout               No   Yes    All
+dropout                0     1    All
 intervention_group                   
-contrl               742   133    875
-control             2089   373   2462
-treatmen a           560    92    652
-treatment a         1677   291   1968
+control             2831   506   3337
+treatment a         2831   490   3321
 treatment b         2871   471   3342
-treatmenta           594   107    701
 All                 8533  1467  10000
 
 7. Dropout rates by group
-dropout                No    Yes
+dropout                 0      1
 intervention_group              
-contrl              84.80  15.20
-control             84.85  15.15
-treatmen a          85.89  14.11
-treatment a         85.21  14.79
+control             84.84  15.16
+treatment a         85.25  14.75
 treatment b         85.91  14.09
-treatmenta          84.74  15.26
 

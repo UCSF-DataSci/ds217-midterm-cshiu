@@ -1,6 +1,6 @@
 Sample Data Statistics
 ==============================
 Count: 100
-Sum: 4791
-Mean:  47.91
-Median:  46.00
+Sum: 4900
+Mean:  49.00
+Median:  50.00

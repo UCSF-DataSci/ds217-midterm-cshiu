@@ -40,7 +40,7 @@ treatment a    60.21
 treatment b    61.01
 
 6. Intervention group vs. dropout status
-dropout                0     1    All
+dropout               No   Yes    All
 intervention_group                   
 control             2831   506   3337
 treatment a         2831   490   3321
@@ -48,7 +48,7 @@ treatment b         2871   471   3342
 All                 8533  1467  10000
 
 7. Dropout rates by group
-dropout                 0      1
+dropout                No    Yes
 intervention_group              
 control             84.84  15.16
 treatment a         85.25  14.75

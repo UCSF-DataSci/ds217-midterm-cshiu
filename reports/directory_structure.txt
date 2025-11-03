@@ -1,16 +1,28 @@
 data:
-total 1872
-drwxr-xr-x@  3 eekod  staff      96 Oct 26 14:55 .
-drwx------@ 28 eekod  staff     896 Oct 26 14:54 ..
+total 1880
+drwxr-xr-x@  4 eekod  staff     128 Nov  2 16:10 .
+drwx------@ 28 eekod  staff     896 Nov  2 20:55 ..
 -rw-r--r--@  1 eekod  staff  958389 Oct 26 14:55 clinical_trial_raw.csv
+-rw-r--r--@  1 eekod  staff     300 Nov  2 16:10 sample_data.csv
 
 output:
-total 0
-drwxr-xr-x@  2 eekod  staff   64 Oct 26 14:30 .
-drwx------@ 28 eekod  staff  896 Oct 26 14:54 ..
+total 5344
+drwxr-xr-x@ 11 eekod  staff      352 Nov  2 16:09 .
+drwx------@ 28 eekod  staff      896 Nov  2 20:55 ..
+-rw-r--r--@  1 eekod  staff   162072 Oct 28 22:25 intervention_comparison.png
+-rw-r--r--@  1 eekod  staff      438 Oct 28 22:25 q4_site_counts.csv
+-rw-r--r--@  1 eekod  staff   697079 Oct 28 22:25 q5_cleaned_data.csv
+-rw-r--r--@  1 eekod  staff      202 Oct 28 22:25 q5_missing_report.txt
+-rw-r--r--@  1 eekod  staff  1843558 Oct 28 22:25 q6_transformed_data.csv
+-rw-r--r--@  1 eekod  staff     1881 Oct 28 22:25 q7_analysis_report.txt
+-rw-r--r--@  1 eekod  staff       66 Oct 28 22:25 q7_intervention_comparison.csv
+-rw-r--r--@  1 eekod  staff      676 Oct 28 22:25 q7_site_summary.csv
+-rw-r--r--@  1 eekod  staff      103 Nov  2 16:10 statistics.txt
 
 reports:
-total 0
-drwxr-xr-x@  3 eekod  staff   96 Oct 26 14:30 .
-drwx------@ 28 eekod  staff  896 Oct 26 14:54 ..
--rw-r--r--@  1 eekod  staff    0 Oct 26 14:55 directory_structure.txt
+total 16
+drwxr-xr-x@  5 eekod  staff  160 Oct 28 22:25 .
+drwx------@ 28 eekod  staff  896 Nov  2 20:55 ..
+-rw-r--r--@  1 eekod  staff    0 Nov  2 20:56 directory_structure.txt
+-rw-r--r--@  1 eekod  staff  568 Oct 28 22:25 notebook_execution_log.txt
+-rw-r--r--@  1 eekod  staff   60 Oct 28 22:25 pipeline_log.txt

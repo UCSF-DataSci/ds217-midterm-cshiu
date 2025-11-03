@@ -29,9 +29,9 @@ site e  57.06  157.70 -999  100  25.48  6.08      117.50  117.0
 
 4. Cardiovascular disease by group
 intervention_group
-control       NaN
-treatment a   NaN
-treatment b   NaN
+control        0.34
+treatment a    0.32
+treatment b    0.33
 
 5. Adherence by group
 intervention_group
@@ -40,7 +40,7 @@ treatment a    60.21
 treatment b    61.01
 
 6. Intervention group vs. dropout status
-dropout               No   Yes    All
+dropout                0     1    All
 intervention_group                   
 control             2831   506   3337
 treatment a         2831   490   3321
@@ -48,7 +48,7 @@ treatment b         2871   471   3342
 All                 8533  1467  10000
 
 7. Dropout rates by group
-dropout                No    Yes
+dropout                 0      1
 intervention_group              
 control             84.84  15.16
 treatment a         85.25  14.75
